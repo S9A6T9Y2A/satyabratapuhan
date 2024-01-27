@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(54, 111, 160);
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            background-color: rgb(54, 111, 160);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form_container{
+            width: 30vw;
+            height: 80vh;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+         } 
+        .create_form input , .update_form input{
+            padding: 8px;
+            font-size: 15px;
+        }
+        .create_form,.update_form{
+            display: none;
+        }
+        .create_form button , .update_form button{
+            padding: 10px 50px;
+            background-color: violet;
+            color: white;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 15px;
+        }
+        .addbtn{
+            padding: 10px 30px;
+            background-color: violet;
+            color: white;
+            font-size: 15px;
+        }
+        .addbtn:hover{
+            background-color: green;
+            cursor: pointer;
+            transform: translateY(-5px);
+        }
+        .addbtn:active{
+            background-color: brown;
+        }
+        .create_form button:hover , .update_form button{
+            background-color: green; 
+            transform: scale(1);
+        }
+        .create_form button:active , .update_form button{
+            background-color: brown;
+        }
+        @media screen and(max-width:400px){
+            .form_container{
+                width: 95vw;
+            } 
+            .create_form input , .update_form input{
+                width: 100%;
+                margin-bottom: 5px;
+            } 
+        } 
+        @media screen and(min-width:400px){
+            .form_container{
+                width: 70vw;
+            } 
+           
+        } 
+        .table{
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form class="create_form">
+            <input type="text" placeholder="Enter a Name" class="name">
+            <input type="text" placeholder="Enter a Email" class="email">
+            <button type="button" onclick="add()">Create</button>
+            </form>
+            <form class="update_form">
+            <input type="text" hidden class="update_id">
+            <input type="text" placeholder="Name" class="uname">
+            <input type="text" placeholder="Email" class="uemail">
+            <button type="button" onclick="update()">Update</button>
+            </form>
+            <button class="addbtn" onclick="createForm()">Add +</button>
+            <br />
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </thead>
+                <tbody class="table_data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./index.js"></script>
+</body>
+</html>
